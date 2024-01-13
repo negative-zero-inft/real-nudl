@@ -3,12 +3,14 @@
 </script>
 
 <div>
-    <Button>say</Button>
-    <Button>gex</Button>
-    <Button>or</Button>
-    <Button>else</Button>
+    <slot>
+        <Button>say</Button>
+        <Button>gex</Button>
+        <Button>or</Button>
+        <Button>else</Button>
+        <Button showGradient={false}>no</Button>
+    </slot>
 </div>
-it's rather complicated if it's about svelte compoment being used here
 
 <style lang="scss">
     div {
