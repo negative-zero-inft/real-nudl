@@ -37,12 +37,13 @@
     }
     .juice {
         height: 100%;
-        width: 50%; // which class do you want to apply it juice :3
+        width: 50%;
         background-color: p.$accent;
         border-radius: 5px;
-        overflow: visible; // <33333
-        // :3 yay more js time
-
+        overflow: visible; // okay so how do we e x t r a c t  t h e  g l o w  from the buttons and put it in its own thing yeah i've tried but damn it's rather complicated
+        
+        // i was thinking about global class that applies on it idk hmm because i'm thinking that we should replace per-element hover and click effects
+        // with one universal mouse interaction thing yes also i want to rebuild your components because you programmed them in runes yes xd
         &::before {
             content: "";
             opacity: var(--opacity);
