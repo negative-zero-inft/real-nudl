@@ -9,7 +9,7 @@
         <p>{description}</p>
     </div>
     <button on:click={() => alert("You fell for it lol")}>
-        <img src="/icons/vector-50.svg" alt="X" title="Close" />
+        <img src="/icons/x.svg" alt="X" title="Close" />
     </button>
 </div>
 
