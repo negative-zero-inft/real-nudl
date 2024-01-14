@@ -16,7 +16,6 @@
 THE BUTTON - If it works, don't touch it
  */
     import C from "color";
-    import type { MouseEventHandler } from "svelte/elements";
 
     let mouseX = 0;
     let mouseY = 0;
@@ -28,32 +27,39 @@ THE BUTTON - If it works, don't touch it
             currentTarget: EventTarget & HTMLButtonElement;
         },
     ) => void = () => {};
-    let brightColor = C(color).alpha(0.25).lighten(1).hex();
-
+    let brightColor = C(color).alpha(0.75).lighten(1.5).string();
     let isMouseThere: boolean = false;
+    let clicked: boolean = false;
 
-    $: gradient =
-        showGradient && isMouseThere
-            ? `radial-gradient(circle at ${mouseX}px ${mouseY}px, ${brightColor} 0%, ${color})`
-            : color;
+    $: gradient = showGradient
+        ? `radial-gradient(circle at ${mouseX}px ${mouseY}px, ${brightColor} 0%, transparent 90%)` // and pseudo element isn't supported in inline css....
+        : color;
+
+    $: clickGradient = `radial-gradient(circle at ${mouseX}px ${mouseY}px, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.00) 22.37%, rgba(255, 255, 255, 0.25) 63.47%, rgba(255, 255, 255, 0.00) 100%);`;
 </script>
 
 <!-- got an action button working :3 -->
-<div>
-    <button
-        style="background: {gradient}"
-        on:mousemove={(e) => {
-            const rect = e.currentTarget.getBoundingClientRect();
-            mouseX = e.clientX - rect.x;
-            mouseY = e.clientY - rect.y;
-        }}
-        on:mouseenter={() => (isMouseThere = true)}
-        on:mouseleave={() => (isMouseThere = false)}
-        on:click={(e) => action(e)}
-    >
-        <slot>Test</slot>
-    </button>
-</div>
+<button
+    style="--background: {gradient}; --brightColor: {brightColor}; --color: {color}; --opacity: {Number(
+        isMouseThere && showGradient,
+    )}; --Copacity: {Number(
+        clicked && showGradient,
+    )}; --Cbackground: {clickGradient};"
+    on:mousemove={(e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        mouseX = e.clientX - rect.x;
+        mouseY = e.clientY - rect.y;
+    }}
+    on:mouseenter={() => (isMouseThere = true)}
+    on:mouseleave={() => (isMouseThere = false)}
+    on:click={(e) => action(e)}
+    on:click={() => {
+        clicked = true;
+        setTimeout(() => (clicked = false), 1000);
+    }}
+>
+    <slot>Test</slot>
+</button>
 
 <style lang="scss">
     @use "$lib/colors.scss" as p;
@@ -68,7 +74,8 @@ THE BUTTON - If it works, don't touch it
         gap: 6px;
         border-radius: 5px;
         cursor: pointer;
-        overflow: hidden; /* Ensure the pseudo-element doesn't overflow */
+        overflow: hidden;
+        background: var(--color);
 
         color: p.$text;
         border: none;
@@ -76,6 +83,21 @@ THE BUTTON - If it works, don't touch it
 
         slot {
             position: relative;
+        }
+
+        &::before {
+            content: "";
+            opacity: var(--opacity);
+            background: var(--background);
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            transition: 0.3s;
+        }
+
+        &:active {
+            background: var(--Cbackground);
+            transition: 0.1s;
         }
     }
 </style>

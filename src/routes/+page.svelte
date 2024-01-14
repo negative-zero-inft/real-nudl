@@ -12,6 +12,7 @@
     }
 </script>
 
+<Banner></Banner>
 <Button>I love cats</Button>
 <Inline>
     <Button>I love cats</Button>
@@ -23,10 +24,10 @@
         action={() => alert("NOOOOOOOOOOOOOOOOOOOOOOOOO 😭")}
         >No more shiny!</Button
     >
+    <Button>Longest button ever!!!!</Button>
 </Inline>
 <Inline></Inline>
-<Banner></Banner>
-<Popup></Popup>
+<Popup />
 
 <Button
     action={() => {
