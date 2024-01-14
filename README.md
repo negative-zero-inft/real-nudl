@@ -1,6 +1,6 @@
 # real-nudl
 
-The NUDL 5.1 design system using [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+The NUDL 5.1 design system using [create-svelte](https://github.com/sveltejs/kit/tree/main/packages/create-svelte) aka `npm create svelte@latest`
 
 ## Developing
 
