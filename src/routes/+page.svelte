@@ -5,7 +5,7 @@
     import Popup from "$kit/Popup.svelte";
     import Slider from "$kit/Slider.svelte"
     import { slide } from "svelte/transition";
-
+    import Input from "$kit/Input.svelte";
     let popup: boolean = false;
     function popsup() {
         popup = true;
@@ -23,14 +23,18 @@
     <Button
         showGradient={false}
         action={() => alert("NOOOOOOOOOOOOOOOOOOOOOOOOO 😭")}
-        >No more shiny!</Button
-    >
+        >No more shiny!</Button>
     <Button>Longest button ever!!!!</Button>
 </Inline>
 <Inline></Inline>
-<div style="border-radius: 15px; overflow: hidden; width: 420px;"><Slider/></div>
-<Popup />
 
+<div style="border-radius: 15px; overflow: hidden; width: 420px; height:35px;"><Slider/></div>
+<Inline>
+    <Input/>
+    <Button></Button>
+</Inline> i want to burn my pc down :3
+<Popup />
+<Input />
 <Button
     action={() => {
         popsup();

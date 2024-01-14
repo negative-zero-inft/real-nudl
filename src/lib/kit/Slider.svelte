@@ -1,15 +1,24 @@
-<!-- coming soon, enough code for today -->
-
 <script lang="ts">
     let isMouseThere: boolean;
 
     let mouseX: number, mouseY: number;
-
-
+    let mouseInsideSlider: boolean;
+    let sliderPercentage: number; 
+    let ticklingSlider: boolean = false;
 </script>
-<!-- you do realize that pseudo element exists? nope not until now :3 this is my first ever experience with svelte in my life xd css* :3 <3333333333 i love u even more <3  <33333333 i love you so much-->
-<div class="juiceContainer">
-    <!-- svelte-ignore a11y-no-static-element-interactions -->
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<div class="juiceContainer" on:mousedown={() => ticklingSlider = true} on:mouseup={() => ticklingSlider = false} on:mousemove={(e) =>{
+
+        const rect = e.currentTarget.getBoundingClientRect(); 
+        mouseX = e.clientX - rect.x;
+        mouseY = e.clientY - rect.y;
+        mouseInsideSlider = e.clientY - rect.top < rect.height && e.clientX - rect.left < rect.width;
+        const relativeLeft = e.clientX - rect.left;
+        if(mouseInsideSlider && ticklingSlider){
+            
+            sliderPercentage = relativeLeft / rect.width * 100;
+        }
+    }}>
     <div class="juice"  on:mousemove={(e) => {
         const rect = e.currentTarget.getBoundingClientRect();
         mouseX = e.clientX - rect.x;
@@ -17,16 +26,14 @@
     }}
     on:mouseenter={() => (isMouseThere = true)}
     on:mouseleave={() => (isMouseThere = false)}
-    style="--opacity: {Number(isMouseThere)}; --x: {mouseX}; --y: {mouseY};">
+    style="--opacity: {Number(isMouseThere)}; --x: {mouseX}; --y: {mouseY}; --width: {sliderPercentage}%;">
 
         <div class="iconContainer">
-            <!-- <3 -->
             <img src="/icons/bug.svg" alt="bug">
         </div>
     </div>
 </div>
-
-<style lang="scss">
+<style lang="scss"> 
     @use "$lib/colors.scss" as p;
     .juiceContainer {
         background-color: p.$bg1;
@@ -37,17 +44,15 @@
     }
     .juice {
         height: 100%;
-        width: 50%;
+        width: var(--width); 
         background-color: p.$accent;
         border-radius: 5px;
-        overflow: visible; // okay so how do we e x t r a c t  t h e  g l o w  from the buttons and put it in its own thing yeah i've tried but damn it's rather complicated
-        
-        // i was thinking about global class that applies on it idk hmm because i'm thinking that we should replace per-element hover and click effects
-        // with one universal mouse interaction thing yes also i want to rebuild your components because you programmed them in runes yes xd
+        overflow: visible; 
+        position: relative;
         &::before {
             content: "";
             opacity: var(--opacity);
-            background: radial-gradient(circle at var(--x)px var(--y)px, brighten(p.$accent) 0%, transparent 90%);
+            background: radial-gradient(circle at var(--x)px var(--y)px, rgba(255, 255, 255, 0.4) 0%, transparent 90%);
             height: 100%;
             width: 100%;
             position: absolute;
@@ -61,5 +66,9 @@
         align-items: center;
         justify-content: center;
         display: flex;
+
+        img {
+            user-select: none;
+        }
     }
 </style>
