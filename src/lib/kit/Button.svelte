@@ -35,7 +35,7 @@ THE BUTTON - If it works, don't touch it
         ? `radial-gradient(circle at ${mouseX}px ${mouseY}px, ${brightColor} 0%, transparent 90%)` // and pseudo element isn't supported in inline css....
         : color;
 
-    $: clickGradient = `radial-gradient(circle at ${mouseX}px ${mouseY}px, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.00) 22.37%, rgba(255, 255, 255, 0.25) 63.47%, rgba(255, 255, 255, 0.00) 100%);`;
+    $: clickGradient = `radial-gradient(circlew at ${mouseX}px ${mouseY}px, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.00) 22.37%, rgba(255, 255, 255, 0.25) 63.47%, rgba(255, 255, 255, 0.00) 100%);`;
 </script>
 
 <!-- got an action button working :3 -->

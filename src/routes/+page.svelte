@@ -3,6 +3,7 @@
     import Inline from "$kit/Inline.svelte";
     import Banner from "$kit/Banner.svelte";
     import Popup from "$kit/Popup.svelte";
+    import Slider from "$kit/Slider.svelte"
     import { slide } from "svelte/transition";
 
     let popup: boolean = false;
@@ -27,6 +28,7 @@
     <Button>Longest button ever!!!!</Button>
 </Inline>
 <Inline></Inline>
+<div style="border-radius: 15px; overflow: hidden; width: 420px;"><Slider/></div>
 <Popup />
 
 <Button
