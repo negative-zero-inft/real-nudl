@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-
 :root {
     background: rgba(15, 15, 15);
     color: #FFF;
@@ -11,4 +10,26 @@ body {
 
     gap: 18px;
     margin: 12px;
+}
+
+@mixin standard-text{
+
+    font-family: Atkinson Hyperlegible;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 123.077% */
+    letter-spacing: 0.26px;
+}
+
+.iconContainer{
+
+    width: v.$element-size;
+    height: v.$element-size;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    img {
+        user-select: none;
+    }
 }

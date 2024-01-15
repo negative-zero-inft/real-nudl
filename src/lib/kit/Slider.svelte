@@ -41,6 +41,8 @@
 <style lang="scss"> 
     @use "$lib/materials.scss" as c;
     @use "$lib/variables.scss" as v;
+    @import "/static/global.scss";
+
     .juiceContainer {
         background-color: c.$top-level-solid;
         height: v.$element-size;
@@ -76,36 +78,15 @@
         align-items: center;
         gap: 1px;
     }
-    .iconContainer{
-
-        width: v.$element-size;
-        height: v.$element-size;
-        align-items: center;
-        justify-content: center;
-        display: flex;
-        img {
-            user-select: none;
-        }
-    }
     .title{
 
         color: c.$text;
-        font-family: Atkinson Hyperlegible;
-        font-size: 13px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 16px; /* 123.077% */
-        letter-spacing: 0.26px;
+        @include standard-text();
     }
     .subtitle{
 
         color: c.$text-sec;
-        font-family: Atkinson Hyperlegible;
-        font-size: 13px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 16px; /* 123.077% */
-        letter-spacing: 0.26px;
+        @include standard-text();
     }
     .textDivider{
 
