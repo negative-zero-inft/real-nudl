@@ -28,7 +28,7 @@
 </Inline>
 <Inline></Inline>
 
-<div class="clump" style="width: 420px; height:35px;"><Slider sliderPercentage={50} icon="album" title="say" subtitle="gex"/></div>
+<div style="border-radius: 15px; overflow: hidden; width: 420px; height:35px;"><Slider sliderPercentage={50} icon="album" title="say" subtitle="gex"/></div>
 <Inline>
     <Input/>
     <Button></Button>
