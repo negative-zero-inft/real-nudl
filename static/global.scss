@@ -33,3 +33,11 @@ body {
         user-select: none;
     }
 }
+
+.clump{
+
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    gap: 6px;
+}
