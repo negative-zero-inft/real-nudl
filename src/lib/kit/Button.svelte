@@ -16,6 +16,7 @@
 THE BUTTON - If it works, don't touch it
  */
     import C from "color";
+    import Glare from "./microelements/glare.svelte";
 
     let mouseX = 0;
     let mouseY = 0;
@@ -40,7 +41,7 @@ THE BUTTON - If it works, don't touch it
 
 <!-- got an action button working :3 -->
 <button
-    style="--background: {gradient}; --brightColor: {brightColor}; --color: {color}; --opacity: {Number(
+    style="--color: {color}; --opacity: {Number(
         isMouseThere && showGradient,
     )}; --Copacity: {Number(
         clicked && showGradient,
@@ -58,6 +59,7 @@ THE BUTTON - If it works, don't touch it
         setTimeout(() => (clicked = false), 1000);
     }}
 >
+<Glare/>
     <slot>Test</slot>
 </button>
 

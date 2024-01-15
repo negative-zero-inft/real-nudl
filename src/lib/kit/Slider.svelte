@@ -2,8 +2,12 @@
 
     import Glare from "$lib/kit/microelements/glare.svelte";
     let mouseInsideSlider: boolean;
-    let sliderPercentage: number; 
     let ticklingSlider: boolean = false;
+    
+    export let sliderPercentage: number = 0; 
+    export let icon: string = "bug";
+    export let title: string = "";
+    export let subtitle: string = "";
 
     const sliderMouseMove = (e: any) =>{
 
@@ -13,17 +17,27 @@
         if(mouseInsideSlider && ticklingSlider){
             
             sliderPercentage = Math.min(Math.max(relativeLeft / rect.width * 100, 0), 100);
-            console.log(sliderPercentage);
         }
     }
 </script>
+
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div class="juiceContainer" on:mousedown={() => ticklingSlider = true} on:mouseup={() => ticklingSlider = false} on:mousemove={e => sliderMouseMove(e)}>
+
     <div class="juice" style="overflow: hidden; --width: {sliderPercentage}%;"><Glare/></div>
-    <div class="iconContainer">
-        <img src="/icons/bug.svg" alt="bug">
+    <div class="decors">
+
+        <div class="iconContainer">
+            <img src={`/icons/${icon}.svg`} alt={icon}>
+        </div>
+        <div class="textDivider">
+
+            <div class="title">{title}</div>
+            <div class="subtitle">{subtitle}</div>
+        </div>
     </div>
 </div>
+
 <style lang="scss"> 
     @use "$lib/materials.scss" as c;
     @use "$lib/variables.scss" as v;
@@ -53,6 +67,15 @@
             transition: v.$animation-speed;
         }
     }
+    .decors{
+
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        pointer-events: none;
+        align-items: center;
+        gap: 1px;
+    }
     .iconContainer{
 
         width: v.$element-size;
@@ -60,10 +83,34 @@
         align-items: center;
         justify-content: center;
         display: flex;
-        position: absolute;
         img {
             user-select: none;
         }
-        pointer-events: none;
+    }
+    .title{
+
+        color: c.$text;
+        font-family: Atkinson Hyperlegible;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px; /* 123.077% */
+        letter-spacing: 0.26px;
+    }
+    .subtitle{
+
+        color: c.$text-sec;
+        font-family: Atkinson Hyperlegible;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px; /* 123.077% */
+        letter-spacing: 0.26px;
+    }
+    .textDivider{
+
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
     }
 </style>
