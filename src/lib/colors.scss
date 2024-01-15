@@ -1,5 +1,14 @@
+
 $text: rgb(255, 255, 255);
-$bg1: rgb(33, 33, 37);
-$bg: rgba(38, 38, 38, 0.75);
 $accent: rgb(142, 16, 133); 
-// here
+$confirm: #4EC13B;
+$hyperlink: #D918CB;
+$switch-disabled: 404040;
+$immutable: rgba(38, 38, 38, 0.50);
+$border: 1px solid var(--outline, rgba(255, 255, 255, 0.40));
+$input-box: rgba(0, 0, 0, 0.20);
+$placeholder: rgba(26, 26, 26, 0.40);
+$acrylic-bg: url("/static/noise.png"), lightgray 0% 0% / 100px 100px repeat, rgba(15, 15, 15, 0.65); 
+$solid-bg: #0F0F0F;
+$top-level-acrylic: rgba(38, 38, 38, 0.75);
+$top-level-solid: #1C1C1C;
