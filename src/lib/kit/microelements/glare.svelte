@@ -5,6 +5,7 @@
     let mouseX: number;
     let mouseY: number;
     let brightColor = C("rgba(100, 100, 100, 0.25)").alpha(0.25).lighten(1.5).string();
+    let clicked: boolean = false;
 
     const mouseMove = (e: any) => {
 
@@ -20,7 +21,17 @@
     on:mouseenter={() => isMouseThere = true}
     on:mouseleave={() => isMouseThere = false}
     on:mousemove={mouseMove}
+
+    on:mousedown={() => {
+
+        clicked = true;
+    }}
+    on:mouseup={() =>{
+
+        clicked = false;
+    }}
 />
+<!-- we'll use the mousedown/up things when implementing the ripple animation -->
 
 <style lang="scss">
 
@@ -33,5 +44,6 @@
         position: absolute;
         left: 0;
         top: 0;
+        border: none;
     }
 </style>

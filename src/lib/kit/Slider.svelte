@@ -22,7 +22,7 @@
 </script>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<div class="juiceContainer" on:mousedown={() => ticklingSlider = true} on:mouseup={() => ticklingSlider = false} on:mousemove={e => sliderMouseMove(e)}>
+<div class="juiceContainer" on:mousedown={(e) => {ticklingSlider = true; sliderMouseMove(e)}} on:mouseup={() => ticklingSlider = false} on:mousemove={e => sliderMouseMove(e)}>
 
     <div class="juice" style="overflow: hidden; --width: {sliderPercentage}%;"><Glare/></div>
     <div class="decors">
