@@ -62,7 +62,7 @@ THE BUTTON - If it works, don't touch it
 </button>
 
 <style lang="scss">
-    @use "$lib/colors.scss" as p;
+    @use "$lib/materials.scss" as p;
     button {
         position: relative;
         display: flex;
