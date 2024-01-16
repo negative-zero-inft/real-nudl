@@ -19,6 +19,7 @@ THE BUTTON - If it works, don't touch it
 
     export let color: string = "#1C1C1C"; // make it use colors defined in materials.scss
     export let disabled: boolean = false; // for later
+    export let width: string = "max-content";
     export let action: (
         el: MouseEvent & {
             currentTarget: EventTarget & HTMLButtonElement;
@@ -30,14 +31,16 @@ THE BUTTON - If it works, don't touch it
 
 <!-- got an action button working :3 -->
 <button
-    style="--color: {color}"
+    style="--color: {color}; --w: {width}"
     on:click={(e) => action(e)}
     on:click={() => {
         clicked = true;
         setTimeout(() => (clicked = false), 1000);
-    }}
->
-<Glare/>
+    }}>
+    
+    {#if !disabled}
+        <Glare/>
+    {/if}
     <slot></slot>
 </button>
 
@@ -48,7 +51,8 @@ THE BUTTON - If it works, don't touch it
     button {
         position: relative;
         display: flex;
-        min-width: 35px;
+        min-width: v.$element-size;
+        width: var(--w);
         height: 35px;
         padding: 10px;
         justify-content: center;

@@ -12,21 +12,25 @@
     }
 </script>
 
-<Banner></Banner>
-<Button>I love cats</Button>
+<div class="mainView">
 
-<div style="border-radius: 15px; overflow: hidden; width: 420px; height:35px;"><Slider width="100%" sliderPercentage={50} icon="album" title="say" subtitle="gex"/></div>
-<Popup/>
-<Input/>
-<Button
-    action={() => {
-        popsup();
-    }}>free vbucks</Button>
-{#if popup}
-    <div class="lol" transition:slide={{ axis: "x" }}>
-        <Popup title="You fell for it" description="kill yourself."></Popup>
-    </div>
-{/if}
+    <Banner/>
+    <Banner title="shiny" subtitle="this banner should have glare" interactible={true}/>
+    <Popup title="say" subtitle="gex"/>
+    <Button>I love cats</Button>
+
+    <div style="border-radius: 15px; overflow: hidden; width: 420px; height:35px;"><Slider width="100%" sliderPercentage={50} icon="album" title="say" subtitle="gex"/></div>
+    <Input/>
+    <Button
+        action={() => {
+            popsup();
+        }}>free vbucks</Button>
+    {#if popup}
+        <div class="lol" transition:slide={{ axis: "x" }}>
+            <Popup title="You fell for it" subtitle="kill yourself."></Popup>
+        </div>
+    {/if}
+</div>
 
 <style lang="scss">
     @use "$lib/materials.scss" as c;

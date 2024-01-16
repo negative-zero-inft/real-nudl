@@ -8,10 +8,34 @@
 
 body {
 
-    gap: 18px;
-    margin: 12px;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
 }
 
+.mainView{
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    gap: 18px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar{
+
+    padding: 12px;
+    gap: 18px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+}
 @mixin standard-text{
 
     font-family: Atkinson Hyperlegible;
@@ -20,6 +44,25 @@ body {
     font-weight: 400;
     line-height: 16px; /* 123.077% */
     letter-spacing: 0.26px;
+}
+
+@mixin header{
+
+    font-family: Atkinson Hyperlegible;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+@mixin big-text{
+
+    font-family: Atkinson Hyperlegible;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.72px;
 }
 
 .iconContainer{
