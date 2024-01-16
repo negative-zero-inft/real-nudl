@@ -37,7 +37,7 @@ THE BUTTON - If it works, don't touch it
         clicked = true;
         setTimeout(() => (clicked = false), 1000);
     }}>
-    
+
     {#if !disabled}
         <Glare/>
     {/if}
@@ -53,16 +53,16 @@ THE BUTTON - If it works, don't touch it
         display: flex;
         min-width: v.$element-size;
         width: var(--w);
-        height: 35px;
-        padding: 10px;
+        height: v.$element-size;
+        min-height: v.$element-size;
+        padding: v.$spacing-l2;
         justify-content: center;
         align-items: center;
-        gap: 6px;
-        border-radius: 5px;
-        cursor: pointer;
+        gap: v.$spacing-l1;
+        border-radius: v.$radius-l1;
         overflow: hidden;
         background-color: var(--color);
-
+        cursor: pointer;
         color: c.$text;
         @include standard-text();
         border: none;

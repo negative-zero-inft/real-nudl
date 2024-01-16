@@ -12,10 +12,17 @@
     }
 </script>
 
+<div class="sidebar">
+
+    <div style="display: flex; gap: 6px; border-radius: 15px; overflow: hidden; flex-direction: column;">
+        <Button color="rgba(38, 38, 38, 0.75)">asoiuhdasuidh</Button>
+        <Button color="rgba(38, 38, 38, 0.75)">asoiuhdasuidh</Button>
+        <Button color="rgba(38, 38, 38, 0.75)">asoiuhdasuidh</Button>
+    </div>
+</div>
 <div class="mainView">
 
     <Banner/>
-    <Banner title="shiny" subtitle="this banner should have glare" interactible={true}/>
     <Popup title="say" subtitle="gex"/>
     <Button>I love cats</Button>
 

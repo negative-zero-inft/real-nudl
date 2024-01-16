@@ -21,7 +21,7 @@
     @use "$lib/variables.scss" as v;
     @import "/static/global.scss";
     .popup {
-        
+
         overflow: hidden;
         position: relative;
         display: flex;

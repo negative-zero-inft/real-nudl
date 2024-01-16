@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 :root {
-    background: rgba(15, 15, 15);
     color: #FFF;
     font-family: Atkinson Hyperlegible;
 }
 
 body {
 
+    background: url("/Evolution.png"), black 50% / cover no-repeat !important;
     width: 100vw;
     height: 100vh;
     padding: 0;
@@ -20,21 +20,24 @@ body {
 
     position: relative;
     width: 100%;
-    height: 100%;
     padding: 12px;
     gap: 18px;
-    margin: 0px;
+    margin: 0;
     display: flex;
     flex-direction: column;
+    background-color: #0F0F0F;;
 }
 
 .sidebar{
 
+    width: fit-content;
     padding: 12px;
     gap: 18px;
     margin: 0px;
     display: flex;
     flex-direction: column;
+    background: url("/acrylic-bg.png"), rgba(15, 15, 15, 0.65) 0% 0% / 100px 100px repeat;
+    backdrop-filter: blur(40px);
 }
 @mixin standard-text{
 
