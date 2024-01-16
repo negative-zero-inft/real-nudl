@@ -15,9 +15,9 @@
 <Banner></Banner>
 <Button>I love cats</Button>
 
-<div style="border-radius: 15px; overflow: hidden; width: 420px; height:35px;"><Slider sliderPercentage={50} icon="album" title="say" subtitle="gex"/></div>
-<Popup />
-<Input />
+<div style="border-radius: 15px; overflow: hidden; width: 420px; height:35px;"><Slider width="100%" sliderPercentage={50} icon="album" title="say" subtitle="gex"/></div>
+<Popup/>
+<Input/>
 <Button
     action={() => {
         popsup();
@@ -28,7 +28,11 @@
     </div>
 {/if}
 
-<style>
+<style lang="scss">
+    @use "$lib/materials.scss" as c;
+    @use "$lib/variables.scss" as v;
+    @import "/static/global.scss";
+
     .lol {
         position: absolute;
         bottom: 20px;

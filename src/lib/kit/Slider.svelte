@@ -8,6 +8,7 @@
     export let icon: string = "bug";
     export let title: string = "";
     export let subtitle: string = "";
+    export let width: string = "100px"; // string because autism
 
     const sliderMouseMove = (e: any) =>{
 
@@ -22,9 +23,10 @@
 </script>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<div class="juiceContainer" on:mousedown={(e) => {ticklingSlider = true; sliderMouseMove(e)}} on:mouseup={() => ticklingSlider = false} on:mousemove={e => sliderMouseMove(e)}>
+<div class="juiceContainer" style="--w: {width}" on:mousedown={(e) => {ticklingSlider = true; sliderMouseMove(e)}} on:mouseup={() => ticklingSlider = false} on:mousemove={e => sliderMouseMove(e)}>
 
-    <div class="juice" style="overflow: hidden; --width: {sliderPercentage}%;"><Glare/></div>
+    <Glare/>
+    <div class="juice" style="overflow: hidden; --width: {sliderPercentage}%;"></div>
     <div class="decors">
 
         <div class="iconContainer">
@@ -38,7 +40,7 @@
     </div>
 </div>
 
-<style lang="scss"> 
+<style lang="scss">
     @use "$lib/materials.scss" as c;
     @use "$lib/variables.scss" as v;
     @import "/static/global.scss";
@@ -50,7 +52,8 @@
         overflow: hidden;
         display: flex;
         flex-direction: row;
-        width: 100%; // the size is supposed to be dictated by the container lol xd
+        width: var(--width); // the size is supposed to be dictated by the container
+        position: relative;
     }
     .juice {
         height: 100%;

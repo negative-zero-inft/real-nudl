@@ -1,3 +1,11 @@
+<!--    
+HEY YOU! YES, YOU, THE DEV WHO WANTS TO USE THIS ELEMENT
+
+this element will overflow unless the parent component has the position: relative; property
+i have absolutely no clue why that happens
+- NRD
+-->
+
 <script lang="ts">
 
     import C from "color";
@@ -19,6 +27,7 @@
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div
+    class="glare"
     style="--bgc: {bgc}; opacity: {Number(isMouseThere)};"
     on:mouseenter={() => isMouseThere = true}
     on:mouseleave={() => isMouseThere = false}
@@ -42,12 +51,13 @@
     @use "$lib/variables.scss" as v;
     div{
 
+        z-index: 69420; // number chosen whilst being high on coffee (don't ask)
         transition: v.$animation-speed;
         width: 120%;
         height: 120%;
         position: absolute;
-        left: 0;
         top: 0;
+        left: 0;
         border: none;
         background: var(--bgc);
     }

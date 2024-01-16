@@ -25,7 +25,6 @@ THE BUTTON - If it works, don't touch it
         },
     ) => void = () => {};
 
-    let isMouseThere: boolean = false;
     let clicked: boolean = false;
 </script>
 
