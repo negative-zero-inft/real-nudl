@@ -51,7 +51,7 @@ x               xx    xxx           x              xx      xx             xx
     </div>
     <span
         class="bannerImage"
-        style="background: linear-gradient(270deg, {color}00 0%, {color} 60.09%), url('{imgSrc}'), lightgray 100% / cover no-repeat;"
+        style="background: linear-gradient(270deg, {color}00 0%, {color} 60.09%), url('{imgSrc}'), {color} 100% / cover no-repeat;"
     >
     </span>
 </div>
