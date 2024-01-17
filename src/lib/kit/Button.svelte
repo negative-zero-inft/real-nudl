@@ -47,7 +47,7 @@ THE BUTTON - If it works, don't touch it
 <style lang="scss">
     @use "$lib/materials.scss" as c;
     @use "$lib/variables.scss" as v;
-    @import "/static/global.scss";
+    
     button {
         position: relative;
         display: flex;
@@ -64,7 +64,7 @@ THE BUTTON - If it works, don't touch it
         background-color: var(--color);
         cursor: pointer;
         color: c.$text;
-        @include standard-text();
+        @include v.standard-text();
         border: none;
         z-index: 1;
 

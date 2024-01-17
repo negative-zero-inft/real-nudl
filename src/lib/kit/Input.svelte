@@ -9,7 +9,7 @@
 
     @use "$lib/materials.scss" as c;
     @use "$lib/variables.scss" as v;
-    @import "/static/global.scss";
+    
     input {
         display: flex;
         padding-left: v.$spacing-l2;
@@ -21,7 +21,7 @@
         background: c.$input-box;
         box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25) inset;
         color: c.$text;
-        @include standard-text();
+        @include v.standard-text();
         height: v.$element-size;
         width: var(--w);
         &::enabled{

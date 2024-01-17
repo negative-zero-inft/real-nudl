@@ -11,4 +11,34 @@ $spacing-l2: 12px;
 $spacing-l3: 18px;
 $spacing-l4: 24px;
 
-$blur: 40px;
+$blur: 40px; // good
+
+
+@mixin standard-text{
+
+    font-family: Atkinson Hyperlegible;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 123.077% */
+    letter-spacing: 0.26px;
+}
+
+@mixin header{
+    
+    font-family: Atkinson Hyperlegible;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+@mixin big-text{
+    
+    font-family: Atkinson Hyperlegible;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.72px;
+}

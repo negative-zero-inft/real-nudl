@@ -1,6 +1,8 @@
 import adapter from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-
+// we'll add github pages soon cya <33333333333333333
+// I have to go :3 <3
+// ilysm my boyfriend :3 <3 ilysm my girlfriend <3333333333333333
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors

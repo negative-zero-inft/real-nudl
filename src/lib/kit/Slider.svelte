@@ -8,7 +8,7 @@
     export let icon: string = "bug";
     export let title: string = "";
     export let subtitle: string = "";
-    export let width: string = "100%"; // string because autism
+    export let width: string = "100%"; // string because autism oh yeah wanna know something that's 100% bullshit? i can't use the materials and variables files in the global.scss ye i see
 
     const sliderMouseMove = (e: any) =>{
 
@@ -42,8 +42,6 @@
 <style lang="scss">
     @use "$lib/materials.scss" as c;
     @use "$lib/variables.scss" as v;
-    @import "/static/global.scss";
-
     .juiceContainer {
         background-color: c.$top-level-solid;
         height: v.$element-size;
@@ -76,19 +74,19 @@
         display: flex;
         flex-direction: row;
         position: absolute;
-        pointer-events: none;
+        pointer-events: none; 
         align-items: center;
         gap: 1px;
     }
     .title{
 
         color: c.$text;
-        @include standard-text();
+        @include v.standard-text();
     }
     .subtitle{
 
         color: c.$text-sec;
-        @include standard-text();
+        @include v.standard-text();
     }
     .textDivider{
 

@@ -19,7 +19,6 @@
 
     @use "$lib/materials.scss" as c;
     @use "$lib/variables.scss" as v;
-    @import "/static/global.scss";
     .popup {
 
         overflow: hidden;
@@ -51,7 +50,7 @@
 
         .title{
 
-            @include header();
+            @include v.header();
             height: 16px;
             align-items: center;
             display: flex;
@@ -59,7 +58,7 @@
 
         .subtitle{
 
-            @include standard-text();
+            @include v.standard-text();
             height: 9px;
             align-items: center;
             display: flex;

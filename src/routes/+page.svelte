@@ -5,16 +5,19 @@
     import Slider from "$kit/Slider.svelte"
     import { slide } from "svelte/transition";
     import Input from "$kit/Input.svelte";
+    import BigEntry from "$kit/BigEntry.svelte";
+    import ListEntry from "$kit/ListEntry.svelte";
     let popup: boolean = false;
     function popsup() {
         popup = true;
         setTimeout(() => (popup = false), 3000);
     }
+    // I am going to review this code :3 <3 anyways what should we work on now :3 okay :3 <3
 </script>
 
 <div class="sidebar">
 
-    <div style="display: flex; gap: 6px; border-radius: 15px; overflow: hidden; flex-direction: column;">
+    <div style="display: flex; gap: 6px; border-radius: 15px; overflow: hidden; flex-direction: column;"> 
         <Button color="rgba(38, 38, 38, 0.75)">asoiuhdasuidh</Button>
         <Button color="rgba(38, 38, 38, 0.75)">asoiuhdasuidh</Button>
         <Button color="rgba(38, 38, 38, 0.75)">asoiuhdasuidh</Button>
@@ -31,7 +34,10 @@
     <Button
         action={() => {
             popsup();
-        }}>free vbucks</Button>
+        }}>free vbucks</Button> 
+<!-- bruh idk how to continue with the ripple  -->
+    <BigEntry />
+    <ListEntry/>
     {#if popup}
         <div class="lol" transition:slide={{ axis: "x" }}>
             <Popup title="You fell for it" subtitle="kill yourself."></Popup>
@@ -42,7 +48,6 @@
 <style lang="scss">
     @use "$lib/materials.scss" as c;
     @use "$lib/variables.scss" as v;
-    @import "/static/global.scss";
 
     .lol {
         position: absolute;
