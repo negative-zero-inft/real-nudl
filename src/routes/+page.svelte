@@ -26,7 +26,7 @@
     <Popup title="say" subtitle="gex"/>
     <Button>I love cats</Button>
 
-    <div style="border-radius: 15px; overflow: hidden; width: 420px; height:35px;"><Slider width="100%" sliderPercentage={50} icon="album" title="say" subtitle="gex"/></div>
+    <div style="border-radius: 0.9375rem; overflow: hidden; width: 25%; height:2.1875rem;"><Slider sliderPercentage={50} icon="album" title="say" subtitle="gex"/></div>
     <Input/>
     <Button
         action={() => {

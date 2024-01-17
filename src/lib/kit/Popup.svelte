@@ -2,10 +2,10 @@
     
     export let title: string = "Placeholder";
     export let subtitle: string = "placejolder";
-    export let width: string = "580px";
+
 </script>
 
-<div class="popup" style="--w: {width}">
+<div class="popup" >
     <div class="text">
         <div class="title">{title}</div>
         <div class="subtitle">{subtitle}</div>
@@ -25,7 +25,7 @@
         overflow: hidden;
         position: relative;
         display: flex;
-        width: var(--w);
+        align-self: stretch;
         padding: v.$spacing-l3 v.$spacing-l2 v.$spacing-l3 v.$spacing-l3;
         align-items: center;
         gap: v.$spacing-l2;

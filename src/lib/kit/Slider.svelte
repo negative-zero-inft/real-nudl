@@ -1,6 +1,7 @@
 <script lang="ts">
 
     import Glare from "$lib/kit/microelements/glare.svelte";
+
     let mouseInsideSlider: boolean;
     let ticklingSlider: boolean = false;
     
@@ -8,7 +9,7 @@
     export let icon: string = "bug";
     export let title: string = "";
     export let subtitle: string = "";
-    export let width: string = "100px"; // string because autism
+    export let width: string = "100%"; // string because autism
 
     const sliderMouseMove = (e: any) =>{
 
@@ -95,6 +96,17 @@
 
         display: flex;
         flex-direction: row;
-        gap: 12px;
+        gap: v.$spacing-l2;
+    }
+    .iconContainer{
+
+        width: v.$element-size;
+        height: v.$element-size;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        img {
+            user-select: none;
+        }
     }
 </style>
