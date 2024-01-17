@@ -2,7 +2,6 @@
 
     import Glare from "$lib/kit/microelements/glare.svelte";
 
-    let mouseInsideSlider: boolean;
     let ticklingSlider: boolean = false;
     
     export let sliderPercentage: number = 0; 
@@ -14,9 +13,8 @@
     const sliderMouseMove = (e: any) =>{
 
         const rect = e.currentTarget.getBoundingClientRect(); 
-        mouseInsideSlider = e.clientY - rect.top < rect.height && e.clientX - rect.left < rect.width + 10 && e.clientX > rect.left - 10;
         const relativeLeft = e.clientX - rect.left;
-        if(mouseInsideSlider && ticklingSlider){
+        if(ticklingSlider){
             
             sliderPercentage = Math.min(Math.max(relativeLeft / rect.width * 100, 0), 100);
         }

@@ -24,9 +24,9 @@
         @include standard-text();
         height: v.$element-size;
         width: var(--w);
-        &:focus{
+        &::enabled{
 
-            border: none;
+            border: none !important;
         }
     }
 </style>

@@ -53,8 +53,8 @@ i have absolutely no clue why that happens
 
         z-index: 69420; // number chosen whilst being high on coffee (don't ask)
         transition: v.$animation-speed;
-        width: 120%;
-        height: 120%;
+        width: 100%;
+        height: 100%;
         position: absolute;
         top: 0;
         left: 0;
