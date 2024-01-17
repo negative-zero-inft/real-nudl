@@ -79,8 +79,8 @@ x               xx    xxx           x              xx      xx             xx
         border-radius: v.$radius-l2;
 
         .bannerImage {
-            height: 140px !important;
-            width: 460px !important;
+            width: 28.75rem;
+            height: 8.75rem;
         }
         .text {
             color: #fff;
