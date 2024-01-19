@@ -2,13 +2,11 @@
     import Button from "$kit/Button.svelte";
     import Banner from "$kit/Banner.svelte";
     import Popup from "$kit/Popup.svelte";
-    import Slider from "$kit/Slider.svelte";
+    import Slider from "$kit/Slider.svelte"
     import { slide } from "svelte/transition";
     import Input from "$kit/Input.svelte";
     import BigEntry from "$kit/BigEntry.svelte";
     import ListEntry from "$kit/ListEntry.svelte";
-    import "$lib/global.scss";
-
     let popup: boolean = false;
     function popsup() {
         popup = true;
@@ -18,33 +16,28 @@
 </script>
 
 <div class="sidebar">
-    <div
-        style="display: flex; gap: 6px; border-radius: 15px; overflow: hidden; flex-direction: column;"
-    >
+
+    <div style="display: flex; gap: 6px; border-radius: 15px; overflow: hidden; flex-direction: column;"> 
         <Button color="rgba(38, 38, 38, 0.75)">asoiuhdasuidh</Button>
         <Button color="rgba(38, 38, 38, 0.75)">asoiuhdasuidh</Button>
         <Button color="rgba(38, 38, 38, 0.75)">asoiuhdasuidh</Button>
     </div>
 </div>
 <div class="mainView">
-    <Banner />
-    <Popup title="say" subtitle="gex" />
+
+    <Banner/>
+    <Popup title="say" subtitle="gex"/>
     <Button>I love cats</Button>
 
-    <div
-        style="border-radius: 15px; overflow: hidden; width: 25%; height:35px;"
-    >
-        <Slider sliderPercentage={50} icon="album" title="say" subtitle="gex" />
-    </div>
-    <Input />
+    <div style="border-radius: 15px; overflow: hidden; width: 25%; height:35px;"><Slider sliderPercentage={50} icon="album" title="say" subtitle="gex"/></div>
+    <Input/>
     <Button
         action={() => {
             popsup();
-        }}>free vbucks</Button
-    >
-    <!-- bruh idk how to continue with the ripple  -->
+        }}>free vbucks</Button> 
+<!-- bruh idk how to continue with the ripple  -->
     <BigEntry />
-    <ListEntry />
+    <ListEntry/>
     {#if popup}
         <div class="lol" transition:slide={{ axis: "x" }}>
             <Popup title="You fell for it" subtitle="kill yourself."></Popup>

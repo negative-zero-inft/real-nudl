@@ -1,15 +1,9 @@
-// e
-
+@use "$lib/variables.scss" as p;
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-html {
-    font-family: Atkinson Hyperlegible;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 16px;
-    /* 123.077% */
-    letter-spacing: 0.26px;
+html{
+
+    @include p.standard-text();
 }
 
 :root {
@@ -28,7 +22,7 @@ body {
     flex-direction: row;
 }
 
-.mainView {
+.mainView{
 
     position: relative;
     width: 100%;
@@ -37,11 +31,10 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    background-color: #0F0F0F;
-    ;
+    background-color: #0F0F0F;;
 }
 
-.sidebar {
+.sidebar{
 
     width: fit-content;
     padding: 12px;
