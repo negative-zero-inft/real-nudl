@@ -37,19 +37,17 @@ x               xx    xxx           x              xx      xx             xx
     export let subtitle: string = "Subtitle";
     export let imgSrc: string = "/ZenOS banner.png";
     export let color: string = "#000000"; // idfk there are tons of unofficial ones
-    export let interactible: boolean = false; // we should make the glare effect also contain the ripple effect but idk how to 
+    export let interactible: boolean = false; // we should make the glare effect also contain the ripple effect but idk how to
     // a) make the glare effect not make whatever is underneath inaccessible
-    // b) make the ripple effect itself lolol 
+    // b) make the ripple effect itself lolol
     // it didn't help bru
     // it wanted me to do pointer-events: none; but that just made the glare not work
     // lnik lol
-    
 </script>
 
 <div style="background: {color};" class="banner">
-
     {#if interactible}
-        <Glare/>
+        <Glare />
     {/if}
     <div class="text" style="background: {color}">
         <div class="title">{title}</div>
@@ -65,8 +63,8 @@ x               xx    xxx           x              xx      xx             xx
 <style lang="scss">
     @use "$lib/materials.scss" as c;
     @use "$lib/variables.scss" as v;
-    
-    @import "/static/global.scss";
+    @import "$lib/global.scss";
+
     .banner {
         position: relative;
         align-self: stretch;
@@ -96,12 +94,11 @@ x               xx    xxx           x              xx      xx             xx
             flex-direction: column;
             gap: v.$spacing-l4;
             .subtitle {
-
                 @include v.big-text();
                 height: 16px;
                 align-items: center;
                 display: flex;
-            } 
+            }
             .title {
                 @include v.header();
                 height: 16px;
