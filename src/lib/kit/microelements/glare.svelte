@@ -10,27 +10,28 @@ i have absolutely no clue why that happens
     import { ripple } from "$lib/deps/ripple";
     import "$lib/deps/ripple/ripple.css";
 
-    import C from "color";
     let isMouseThere: boolean = false;
     let mouseX: number;
     let mouseY: number;
-    let brightColor = C("rgba(100, 100, 100, 0.25)").alpha(0.25).lighten(1.5).string();
-    let clicked: boolean = false;
     let bgc: string;
+    let rectWidth: number;
+    let rippleBgc: string;
 
     const mouseMove = (e: any) => {
 
         const rect = e.currentTarget.getBoundingClientRect();
+        rectWidth = rect.width;
         mouseX = e.clientX - rect.x;
         mouseY = e.clientY - rect.y;
-        if(!clicked) bgc = `radial-gradient(circle at ${mouseX}px ${mouseY}px, ${brightColor} 0%, transparent 90%)`
+        bgc = `radial-gradient(${rectWidth * 1.2}px at ${mouseX}px ${mouseY}px, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.00) 100%)`
+        rippleBgc = `radial-gradient(${rectWidth * 1.2}px at 50%, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.00) 22.37%, rgba(255, 255, 255, 0.25) 63.47%, rgba(255, 255, 255, 0.00) 100%);`
     }
 </script>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div
     class="glare"
-    style="--bgc: {bgc}; opacity: {Number(isMouseThere)};"
+    style="--bgc: {bgc}; --ripple-duration: {rectWidth / 3000}s; opacity: {Number(isMouseThere)}; --ripple-bgc: {rippleBgc}"
     on:mouseenter={() => isMouseThere = true}
     on:mouseleave={() => isMouseThere = false}
     on:mousemove={mouseMove}
@@ -50,19 +51,11 @@ i have absolutely no clue why that happens
         height: 100%;
         position: absolute;
         top: 0;
+        bottom: 0;
+        right: 0;
         left: 0;
         border: none;
         background: var(--bgc); // btw don't use rem, it's hard to work with in ou oke :3 <3 r setup lol <3
         --ripple-color: radial-gradient(circle at 50%, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.00) 22.37%, rgba(255, 255, 255, 0.25) 63.47%, rgba(255, 255, 255, 0.00) 100%);
-        .ripple{
-            z-index: 69421;
-            position: absolute;
-            border-radius: 50%;
-            width: 100%;
-            height: 100%;
-            transform: scale(0);
-            pointer-events: none;
-            transition: cubic-bezier(1, 0, 0, 0);
-        }
     }
 </style>

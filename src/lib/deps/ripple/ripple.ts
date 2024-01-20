@@ -74,12 +74,6 @@ function ripple(el: HTMLElement, options?: RippleOptions) {
 		let top = e.clientY - rect.top - radius;
 		let left = e.clientX - rect.left - radius;
 
-		if (maximumRadius && size > maximumRadius) {
-			size = maximumRadius * 2;
-			top = e.clientY - rect.top - maximumRadius;
-			left = e.clientX - rect.left - maximumRadius;
-		}
-
 		ripple.style.left = left + "px";
 		ripple.style.top = top + "px";
 
