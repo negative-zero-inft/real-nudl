@@ -1,11 +1,11 @@
 <script lang="ts">
-    
+    // holy shit is this chris pratt or maybe
     export let title: string = "Placeholder";
     export let subtitle: string = "placejolder";
 
 </script>
 
-<div class="popup" >
+<div class="popup">
     <div class="text">
         <div class="title">{title}</div>
         <div class="subtitle">{subtitle}</div>

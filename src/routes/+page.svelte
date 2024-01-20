@@ -27,7 +27,7 @@
     </div>
 </div>
 <div class="mainView">
-    <Banner />
+    <Banner interactible/>
     <Popup title="say" subtitle="gex" />
     <Button>I love cats</Button>
 
