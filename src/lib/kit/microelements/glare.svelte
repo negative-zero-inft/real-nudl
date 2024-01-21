@@ -24,7 +24,7 @@ i have absolutely no clue why that happens
         mouseX = e.clientX - rect.x;
         mouseY = e.clientY - rect.y;
         bgc = `radial-gradient(${rectWidth * 1.2}px at ${mouseX}px ${mouseY}px, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.00) 100%)`
-        rippleBgc = `radial-gradient(${rectWidth * 1.2}px at 50%, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.00) 22.37%, rgba(255, 255, 255, 0.25) 63.47%, rgba(255, 255, 255, 0.00) 100%);`
+        rippleBgc = `radial-gradient(${rectWidth * 1.2}px at 50%, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.00) 22.37%, rgba(255, 255, 255, 0.25) 63.47%, rgba(255, 255, 255, 0.00) 120%);`
     }
 </script>
 

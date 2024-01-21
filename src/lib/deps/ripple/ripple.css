@@ -12,14 +12,14 @@
     transform: translate3d(0, 0, 0);
     -webkit-transition: opacity 1s;
     transition: opacity 1s;
-    -webkit-animation: ripple var(--ripple-duration, 0.4s) cubic-bezier(0.5, 0, 0.5, 1);
-    animation: ripple var(--ripple-duration, 0.4s) cubic-bezier(0.5, 0, 0.5, 1);
+    -webkit-animation: ripple var(--ripple-duration, 0.4s) cubic-bezier(0.5, 0, 0, 0);
+    animation: ripple var(--ripple-duration, 0.4s) cubic-bezier(0.5, 0, 0, 0);
 }
 
 [svelte-ripple-effect-ready][ripple-center] .ripple {
     translate: -50% -50% !important;
-    -webkit-animation: ripple var(--ripple-duration, 0.6s) cubic-bezier(0.5, 0, 0.5, 1);
-    animation: ripple var(--ripple-duration, 0.6s) cubic-bezier(0.5, 0, 0.5, 1);
+    -webkit-animation: ripple var(--ripple-duration, 0.6s) cubic-bezier(0.5, 0, 0, 0);
+    animation: ripple var(--ripple-duration, 0.6s) cubic-bezier(0.5, 0, 0, 0);
 }
 
 @keyframes ripple {
