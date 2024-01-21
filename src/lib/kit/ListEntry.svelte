@@ -4,13 +4,15 @@
     export let image: string = "/NRD_irl.webp";
     export let title: string = "say";
     export let subtitle: string = "gex";
+    export let onclick: Function = () =>{}; // works well enough
 </script>
 
-<div class="listEntry">
+<button class="listEntry" on:click={() => onclick()}>
 
     <div class="img">
 
         <Glare/>
+        <!-- bruh...-->
         <!-- svelte-ignore a11y-missing-attribute the only file i found is in ripple.css we need to inject gradient there---> 
         <img style="background: url({image}), #000000 0% / cover no-repeat;"/>
     </div>
@@ -20,7 +22,7 @@
         <div class="title">{title}</div>
         <div class="subtitle">{subtitle}</div>
     </div>
-</div>
+</button>
 
 <style lang="scss">
 
@@ -29,10 +31,11 @@
     
     .listEntry{
 
+        border: none;
+        background: none;
         gap: v.$spacing-l2;
-        height: v.$element-size;
+        height: v.$element-size !important;
         border-radius: v.$radius-l1;
-        overflow: hidden;
         display: flex;
         flex-direction: row;
     }

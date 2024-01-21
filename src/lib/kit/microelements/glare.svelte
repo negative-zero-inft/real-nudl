@@ -36,9 +36,7 @@ i have absolutely no clue why that happens
     on:mousemove={mouseMove}
     use:ripple>
 </div>
-<!--->
-<!-- we'll use the mousedown/up things when implementing the ripple animation https://css-tricks.com/how-to-recreate-the-ripple-effect-of-material-design-buttons/ https://codepen.io/ainalem/pen/LqvBWO https://codepen.io/ayoisaiah/pen/GWwabJ use these examples to recreate-->
-<!-- maybe that code pen.io is more useful wdym and with that use pseudo element because css likes to mess with us -->
+
 <style lang="scss">
 
     @use "$lib/variables.scss" as v;
@@ -54,7 +52,7 @@ i have absolutely no clue why that happens
         right: 0;
         left: 0;
         border: none;
-        background: var(--bgc); // btw don't use rem, it's hard to work with in ou oke :3 <3 r setup lol <3
+        background: var(--bgc);
         --ripple-color: radial-gradient(circle at 50%, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.00) 22.37%, rgba(255, 255, 255, 0.25) 63.47%, rgba(255, 255, 255, 0.00) 100%);
     }
 </style>

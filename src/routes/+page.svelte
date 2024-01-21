@@ -44,7 +44,7 @@
     >
     <!-- bruh idk how to continue with the ripple  -->
     <BigEntry />
-    <ListEntry />
+    <ListEntry onclick={() =>alert("saygex")}/>
     {#if popup}
         <div class="lol" transition:slide={{ axis: "x" }}>
             <Popup title="You fell for it" subtitle="kill yourself."></Popup>
