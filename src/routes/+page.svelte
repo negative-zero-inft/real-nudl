@@ -7,6 +7,7 @@
     import Input from "$kit/Input.svelte";
     import BigEntry from "$kit/BigEntry.svelte";
     import ListEntry from "$kit/ListEntry.svelte";
+    import Avatar from "$kit/microelements/avatar.svelte";
     import "$lib/global.scss";
 
     let popup: boolean = false;
@@ -14,7 +15,6 @@
         popup = true;
         setTimeout(() => (popup = false), 3000);
     }
-    // I am going to review this code :3 <3 anyways what should we work on now :3 okay :3 <3
 </script>
 
 <div class="sidebar">
@@ -24,13 +24,42 @@
         <Button color="rgba(38, 38, 38, 0.75)">asoiuhdasuidh</Button>
         <Button color="rgba(38, 38, 38, 0.75)">asoiuhdasuidh</Button>
         <Button color="rgba(38, 38, 38, 0.75)">asoiuhdasuidh</Button>
+        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
+        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
+        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
+        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
+        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
+        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
+        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
+        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
+        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
+        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
+        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
+        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
+        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
+        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
+        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
+        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
+        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
+        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
+        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
+        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
+        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
+        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
+        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
+        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
+        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
+        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
+        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
+        <Button>I love cats</Button>
     </div>
 </div>
 <div class="mainView">
+    <Button>I love cats</Button>
     <Banner interactible/>
     <Popup title="say" subtitle="gex" />
     <Button>I love cats</Button>
-
+    <Button color="rgba(38, 38, 38, 0.75)">asoiuhdasuidh</Button>
     <div
         style="border-radius: 15px; overflow: hidden; width: 25%; height:35px;"
     >
@@ -42,9 +71,12 @@
             popsup();
         }}>free vbucks</Button
     >
-    <!-- bruh idk how to continue with the ripple  -->
     <BigEntry />
-    <ListEntry onclick={() =>alert("saygex")}/>
+    <ListEntry/>
+    <Avatar src="/sussykitty.png" />
+    <Button width="35px"> 
+        <Avatar src="/sussykitty.png" />
+    </Button>
     {#if popup}
         <div class="lol" transition:slide={{ axis: "x" }}>
             <Popup title="You fell for it" subtitle="kill yourself."></Popup>

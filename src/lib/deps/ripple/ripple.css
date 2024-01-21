@@ -10,18 +10,17 @@
     pointer-events: none;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
-    -webkit-transition: opacity 1s;
-    transition: opacity 1s;
-    -webkit-animation: ripple var(--ripple-duration, 0.4s) ;
-    animation: ripple var(--ripple-duration, 0.4s) ;
+    -webkit-transition: opacity var(--odur);
+    transition: opacity var(--odur);
+    -webkit-animation: ripple var(--ripple-duration);
+    animation: ripple var(--ripple-duration); 
 }
-
 [svelte-ripple-effect-ready][ripple-center] .ripple {
     translate: -50% -50% !important;
-    -webkit-animation: ripple var(--ripple-duration, 0.6s) ;
-    animation: ripple var(--ripple-duration, 0.6s) ;
+    -webkit-animation: ripple var(--ripple-duration);
+    animation: ripple var(--ripple-duration);
 }
-
+/* it might be overriden by something else */
 @keyframes ripple {
     from {
         filter: blur(160px);

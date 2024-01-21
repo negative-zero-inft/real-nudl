@@ -1,7 +1,7 @@
 <script lang="ts">
     import Glare from "./microelements/glare.svelte";
 
-    export let image: string = "/NRD_irl.webp";
+    export let image: string = "/Evolution.png";
     export let title: string = "say";
     export let subtitle: string = "gex";
     export let onclick: Function = () =>{}; // works well enough

@@ -63,7 +63,7 @@ x               xx    xxx           x              xx      xx             xx
 <style lang="scss">
     @use "$lib/materials.scss" as c;
     @use "$lib/variables.scss" as v;
-    @import "$lib/global.scss";
+   // @import "$lib/global.scss";
 
     .banner {
         position: relative;
