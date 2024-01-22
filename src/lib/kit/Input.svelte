@@ -28,11 +28,4 @@
             border: none !important;
         }
     }
-    div{
-
-        position: relative;
-        width: 200px !important;
-        overflow: hidden;
-        border-radius: 5px;
-    }
 </style>

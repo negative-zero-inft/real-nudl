@@ -37,7 +37,6 @@ THE BUTTON - If it works, don't touch it
         clicked = true;
         setTimeout(() => (clicked = false), 1000);
     }}>
-
     {#if !disabled}
         <Glare/>
     {/if}

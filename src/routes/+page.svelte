@@ -21,9 +21,6 @@
     <div
         style="display: flex; gap: 6px; border-radius: 15px; overflow: hidden; flex-direction: column;"
     >
-        <Button color="rgba(38, 38, 38, 0.75)">asoiuhdasuidh</Button>
-        <Button color="rgba(38, 38, 38, 0.75)">asoiuhdasuidh</Button>
-        <Button color="rgba(38, 38, 38, 0.75)">asoiuhdasuidh</Button>
         <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
         <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
         <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
@@ -51,7 +48,6 @@
         <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
         <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
         <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
-        <Button>I love cats</Button>
     </div>
 </div>
 <div class="mainView">

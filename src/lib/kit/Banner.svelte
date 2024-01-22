@@ -36,13 +36,8 @@ x               xx    xxx           x              xx      xx             xx
     export let title: string = "Title";
     export let subtitle: string = "Subtitle";
     export let imgSrc: string = "/ZenOS banner.png";
-    export let color: string = "#000000"; // idfk there are tons of unofficial ones
-    export let interactible: boolean = false; // we should make the glare effect also contain the ripple effect but idk how to
-    // a) make the glare effect not make whatever is underneath inaccessible
-    // b) make the ripple effect itself lolol
-    // it didn't help bru
-    // it wanted me to do pointer-events: none; but that just made the glare not work
-    // lnik lol
+    export let color: string = "#000000"; 
+    export let interactible: boolean = false;
 </script>
 
 <div style="background: {color};" class="banner">
@@ -63,7 +58,6 @@ x               xx    xxx           x              xx      xx             xx
 <style lang="scss">
     @use "$lib/materials.scss" as c;
     @use "$lib/variables.scss" as v;
-   // @import "$lib/global.scss";
 
     .banner {
         position: relative;
