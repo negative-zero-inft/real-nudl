@@ -49,11 +49,10 @@ function ripple(el: HTMLElement, options?: RippleOptions) {
 	const createRipple = (e: PointerEvent) => {
 		addClassIfMissing();
 		const rect = el.getBoundingClientRect();
-		const speed = 2 * rect.width;
+		const speed = 3 * Math.sqrt(rect.width * rect.height);
 		duration = timeToFillRectangle(e.clientX - rect.left, e.clientY - rect.top, rect.width, rect.height, speed)
 		el.style.setProperty("--ripple-duration", duration + "s");
 		el.style.setProperty("--odur", duration + "s")
-		console.log("duration " + duration)
 		const radius = findFurthestPoint(
 			e.clientX,
 			el.offsetWidth,
@@ -84,7 +83,6 @@ function ripple(el: HTMLElement, options?: RippleOptions) {
 				ripple.style.opacity = "0"
 				setTimeout(
 					() => {
-						console.log("gone")
 						ripple.remove();
 					},
 					duration * 1000

@@ -15,7 +15,6 @@ i have absolutely no clue why that happens
     let mouseY: number;
     let bgc: string;
     let rectWidth: number;
-    let rippleBgc: string;
 
     const mouseMove = (e: any) => {
 
@@ -23,24 +22,25 @@ i have absolutely no clue why that happens
         rectWidth = rect.width;
         mouseX = e.clientX - rect.x;
         mouseY = e.clientY - rect.y;
-        bgc = `radial-gradient(${rectWidth * 1.2}px at ${mouseX}px ${mouseY}px, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.00) 100%)`
+        bgc = `radial-gradient(${rectWidth * 1.2}px at ${mouseX}px ${mouseY}px, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.00) 100%)`;
     }
 </script>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<div
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<span
     class="glare"
-    style="--bgc: {bgc};  opacity: {Number(isMouseThere)};"
+    style="--bgc: {bgc}; opacity: {Number(isMouseThere)};"
     on:mouseenter={() => isMouseThere = true}
     on:mouseleave={() => isMouseThere = false}
     on:mousemove={mouseMove}
     use:ripple>
-</div>
+</span>
 
 <style lang="scss">
 
     @use "$lib/variables.scss" as v;
-    div{
+    span{
 
         z-index: 69420; // number chosen whilst being high on coffee (don't ask) xdddd
         transition: 0.5s;

@@ -1,5 +1,4 @@
 <script lang="ts">
-
     export let width: string = "200px"; // string because i'm high
 </script>
 
@@ -28,5 +27,12 @@
 
             border: none !important;
         }
+    }
+    div{
+
+        position: relative;
+        width: 200px !important;
+        overflow: hidden;
+        border-radius: 5px;
     }
 </style>
