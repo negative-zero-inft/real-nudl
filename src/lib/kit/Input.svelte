@@ -3,7 +3,12 @@
     export let value: string = "";
 </script>
 
-<input type="text" placeholder="Placeholder" style="--w: {width}" bind:value />
+<input
+    type="text"
+    placeholder="Placeholder"
+    style="width: {width}"
+    bind:value
+/>
 
 <style lang="scss">
     @use "$lib/materials.scss" as c;
@@ -11,6 +16,7 @@
 
     input {
         display: flex;
+        padding: 0;
         padding-left: v.$spacing-l2;
         justify-content: center;
         align-content: center;
@@ -21,8 +27,7 @@
         box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25) inset;
         color: c.$text;
         @include v.standard-text();
-        height: v.$element-size;
-        width: var(--w);
+        height: v.$element-size !important;
         &::enabled {
             border: none !important;
         }

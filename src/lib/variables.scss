@@ -3,6 +3,7 @@ $radius-l2: 15px;
 $radius-l3: 25px;
 $radius-l4: 35px; // you shouldn't really use it
 
+$label-height: 30px;
 $element-size: 35px; // standard element size. usually height but sometimes also width
 $animation-speed: 0.25s;
 
@@ -13,19 +14,19 @@ $spacing-l4: 24px;
 
 $blur: 40px; // good
 
-
-@mixin standard-text{
+@mixin standard-text {
 
     font-family: Atkinson Hyperlegible;
     font-size: 13px;
     font-style: normal;
     font-weight: 400;
-    line-height: 16px; /* 123.077% */
+    line-height: 16px;
+    /* 123.077% */
     letter-spacing: 0.26px;
 }
 
-@mixin header{
-    
+@mixin header {
+
     font-family: Atkinson Hyperlegible;
     font-size: 24px;
     font-style: normal;
@@ -33,12 +34,22 @@ $blur: 40px; // good
     line-height: normal;
 }
 
-@mixin big-text{
-    
+@mixin big-text {
+
     font-family: Atkinson Hyperlegible;
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     letter-spacing: 0.72px;
+}
+
+@mixin small-title {
+
+    font-family: "Atkinson Hyperlegible";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.42px;
 }

@@ -9,6 +9,7 @@
     import Avatar from "$kit/microelements/avatar.svelte";
     import "$lib/global.scss";
     import Label from "$kit/Label.svelte";
+    import Time from "$kit/Time.svelte";
 
     let isAlreadyTimeoutRunning: number = NaN;
     let popup: boolean = false;
@@ -29,23 +30,33 @@
 
 <div class="sidebar">
     <div
-        style="display: flex; gap: 6px; border-radius: 15px; overflow: hidden; flex-direction: column;"
+        style="display: flex; gap: 6px; border-radius: 15px; flex-direction: column; width: 100%; overflow: hidden;"
     >
         {#each new Array(30) as _}
-            <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
+            <Button color="rgba(38, 38, 38, 0.75)" width="100%" icon="x"
+                >KILL YOURSELF</Button
+            >
         {/each}
     </div>
 </div>
 <div class="mainView">
-    <Button>I love cats</Button>
     <Banner interactible />
     <Popup title="say" subtitle="gex" staticElm={true} />
     <Button>I love cats</Button>
-    <Button color="rgba(38, 38, 38, 0.75)">asoiuhdasuidh</Button>
+    <Button color="rgba(38, 38, 38, 0.75)" icon="3d">asoiuhdasuidh</Button>
     <div
-        style="border-radius: 15px; overflow: hidden; width: 25%; height:35px;"
+        style="border-radius: 15px; overflow: hidden; width: 25%; height:35px; min-height:35px;"
     >
         <Slider sliderPercentage={50} icon="album" title="say" subtitle="gex" />
+    </div>
+    <div
+        style="border-radius: 15px; overflow: hidden; width: 25%; height:35px; min-height:35px;"
+    >
+        <Slider
+            sliderPercentage={100}
+            markers
+            title="how gay is your microwave"
+        />
     </div>
     <Input bind:value />
     <Button
@@ -53,12 +64,14 @@
             popsup();
         }}>free vbucks</Button
     >
-    <BigEntry />
-    <ListEntry />
-    <Avatar src="/sussykitty.png" />
     <Button width="35px">
         <Avatar src="/sussykitty.png" />
     </Button>
-    <Popup title="Yes, your name is" subtitle={value} bind:popup />
+    <Popup
+        title="You have been banned"
+        subtitle="You said &quot{value}&quot"
+        bind:popup
+    />
     <Label></Label>
+    <Time />
 </div>
