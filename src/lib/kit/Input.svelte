@@ -1,14 +1,14 @@
 <script lang="ts">
     export let width: string = "200px"; // string because i'm high
+    export let value: string = "";
 </script>
 
-<input type="text" placeholder="Placeholder" style="--w: {width}"/>
+<input type="text" placeholder="Placeholder" style="--w: {width}" bind:value />
 
 <style lang="scss">
-
     @use "$lib/materials.scss" as c;
     @use "$lib/variables.scss" as v;
-    
+
     input {
         display: flex;
         padding-left: v.$spacing-l2;
@@ -23,9 +23,12 @@
         @include v.standard-text();
         height: v.$element-size;
         width: var(--w);
-        &::enabled{
-
+        &::enabled {
             border: none !important;
+        }
+
+        &:focus {
+            outline: none !important;
         }
     }
 </style>

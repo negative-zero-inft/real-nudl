@@ -3,17 +3,26 @@
     import Banner from "$kit/Banner.svelte";
     import Popup from "$kit/Popup.svelte";
     import Slider from "$kit/Slider.svelte";
-    import { slide } from "svelte/transition";
     import Input from "$kit/Input.svelte";
     import BigEntry from "$kit/BigEntry.svelte";
     import ListEntry from "$kit/ListEntry.svelte";
     import Avatar from "$kit/microelements/avatar.svelte";
     import "$lib/global.scss";
 
+    let isAlreadyTimeoutRunning: number = NaN;
     let popup: boolean = false;
+
+    let value: string;
     function popsup() {
         popup = true;
-        setTimeout(() => (popup = false), 3000);
+        if (!isNaN(isAlreadyTimeoutRunning)) {
+            clearTimeout(isAlreadyTimeoutRunning);
+        }
+        isAlreadyTimeoutRunning = setTimeout(() => {
+            if (popup) {
+                popup = false;
+            }
+        }, 3000);
     }
 </script>
 
@@ -29,7 +38,7 @@
 <div class="mainView">
     <Button>I love cats</Button>
     <Banner interactible />
-    <Popup title="say" subtitle="gex" />
+    <Popup title="say" subtitle="gex" staticElm={true} />
     <Button>I love cats</Button>
     <Button color="rgba(38, 38, 38, 0.75)">asoiuhdasuidh</Button>
     <div
@@ -37,7 +46,7 @@
     >
         <Slider sliderPercentage={50} icon="album" title="say" subtitle="gex" />
     </div>
-    <Input />
+    <Input bind:value />
     <Button
         action={() => {
             popsup();
@@ -49,20 +58,5 @@
     <Button width="35px">
         <Avatar src="/sussykitty.png" />
     </Button>
-    {#if popup}
-        <div class="lol" transition:slide={{ axis: "x" }}>
-            <Popup title="You fell for it" subtitle="kill yourself."></Popup>
-        </div>
-    {/if}
+    <Popup title="Yes, your name is" subtitle={value} bind:popup />
 </div>
-
-<style lang="scss">
-    @use "$lib/materials.scss" as c;
-    @use "$lib/variables.scss" as v;
-
-    .lol {
-        position: absolute;
-        bottom: 20px;
-        left: 20px;
-    }
-</style>
