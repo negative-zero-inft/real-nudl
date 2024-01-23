@@ -21,38 +21,14 @@
     <div
         style="display: flex; gap: 6px; border-radius: 15px; overflow: hidden; flex-direction: column;"
     >
-        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
-        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
-        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
-        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
-        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
-        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
-        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
-        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
-        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
-        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
-        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
-        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
-        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
-        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
-        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
-        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
-        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
-        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
-        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
-        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
-        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
-        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
-        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
-        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
-        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
-        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
-        <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
+        {#each new Array(30) as _}
+            <Button color="rgba(38, 38, 38, 0.75)">I love cats</Button>
+        {/each}
     </div>
 </div>
 <div class="mainView">
     <Button>I love cats</Button>
-    <Banner interactible/>
+    <Banner interactible />
     <Popup title="say" subtitle="gex" />
     <Button>I love cats</Button>
     <Button color="rgba(38, 38, 38, 0.75)">asoiuhdasuidh</Button>
@@ -68,9 +44,9 @@
         }}>free vbucks</Button
     >
     <BigEntry />
-    <ListEntry/>
+    <ListEntry />
     <Avatar src="/sussykitty.png" />
-    <Button width="35px"> 
+    <Button width="35px">
         <Avatar src="/sussykitty.png" />
     </Button>
     {#if popup}
