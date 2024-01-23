@@ -8,6 +8,7 @@
     import ListEntry from "$kit/ListEntry.svelte";
     import Avatar from "$kit/microelements/avatar.svelte";
     import "$lib/global.scss";
+    import Label from "$kit/Label.svelte";
 
     let isAlreadyTimeoutRunning: number = NaN;
     let popup: boolean = false;
@@ -59,4 +60,5 @@
         <Avatar src="/sussykitty.png" />
     </Button>
     <Popup title="Yes, your name is" subtitle={value} bind:popup />
+    <Label></Label>
 </div>
