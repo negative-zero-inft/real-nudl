@@ -21,18 +21,26 @@ THE BUTTON - If it works, don't touch it
     export let disabled: boolean = false; // for later
     export let width: string = "max-content";
     export let icon: string = "";
+    export let text: string = "";
     export let action: (
         el: MouseEvent & {
             currentTarget: EventTarget & HTMLButtonElement;
         },
     ) => void = () => {};
+    export let avatar: string = "";
 
     let clicked: boolean = false;
 </script>
 
-<!-- got an action button working :3 -->
+<!-- got an action button working :3 maybe better keep this session in the bg, im currently reading some wiki articles :3 <3-->
 <button
-    style="--color: {color}; width: {width}; --padding: {icon ? 0 : 12}px"
+    style="--color: {color}; width: {width}; --padding: {icon || avatar
+        ? 0
+        : 12}px; --padding-right: {text && !avatar
+        ? 12
+        : 0 || (text && avatar)
+          ? 10
+          : 0}px;"
     on:click={(e) => action(e)}
     on:click={() => {
         clicked = true;
@@ -47,13 +55,23 @@ THE BUTTON - If it works, don't touch it
             <img src={`icons/${icon}.svg`} alt={icon} />
         </div>
     {/if}
-    <slot />
+    {#if avatar}
+        <div class="iconContainer">
+            <img class="avatar" src={avatar} alt={avatar} />
+        </div>
+    {/if}
+    {text}
 </button>
 
 <style lang="scss">
     @use "$lib/materials.scss" as c;
     @use "$lib/variables.scss" as v;
 
+    .avatar {
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+    }
     .iconContainer {
         width: v.$element-size;
         height: v.$element-size;
@@ -70,7 +88,7 @@ THE BUTTON - If it works, don't touch it
         min-width: v.$element-size;
         height: v.$element-size;
         min-height: v.$element-size;
-        padding-right: v.$spacing-l2;
+        padding-right: var(--padding-right);
         padding-left: var(--padding);
         justify-content: center;
         align-items: center;

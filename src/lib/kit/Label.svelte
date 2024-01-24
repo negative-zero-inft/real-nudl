@@ -1,14 +1,25 @@
 <script lang="ts">
     import Glare from "./microelements/glare.svelte";
-    export let name = "Pinned";
+    export let title = "Pinned";
     export let expandable: boolean = false;
+    export let expanded: boolean = false;
+    const click = () => {
+        expanded = !expanded;
+    };
 </script>
 
-<div>
-    {name}
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<div on:click={click}>
+    {title}
     <span></span>
     {#if expandable}
         <Glare />
+        {#if expanded}
+            <img src="icons/dir/down.svg" alt="expand" />
+        {:else}
+            <img src="icons/dir/right.svg" alt="expand" />
+        {/if}
     {/if}
 </div>
 
@@ -16,6 +27,8 @@
     @use "$lib/materials.scss" as c;
     @use "$lib/variables.scss" as v;
     div {
+        position: relative;
+        overflow: hidden;
         display: flex;
         height: v.$label-height !important;
         min-height: v.$label-height;
