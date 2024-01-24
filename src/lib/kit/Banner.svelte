@@ -35,8 +35,8 @@ x               xx    xxx           x              xx      xx             xx
     import Glare from "$lib/kit/microelements/glare.svelte";
     export let title: string = "Title";
     export let subtitle: string = "Subtitle";
-    export let imgSrc: string = "/ZenOS banner.png";
-    export let color: string = "#000000"; 
+    export let imgSrc: string = "ZenOS banner.png";
+    export let color: string = "#000000";
     export let interactible: boolean = false;
 </script>
 

@@ -48,7 +48,7 @@
     <div class="decors">
         {#if icon}
             <div class="iconContainer">
-                <img src={`/icons/${icon}.svg`} alt={icon} />
+                <img src={`icons/${icon}.svg`} alt={icon} />
             </div>
         {:else}
             <span style="width: 12px;"></span>

@@ -19,7 +19,7 @@
                 <div class="subtitle">{subtitle}</div>
             </div>
             <button on:click={() => (popup = false)}>
-                <img src="/icons/x.svg" alt="X" title="Close" />
+                <img src="icons/x.svg" alt="X" title="Close" />
             </button>
         </div>
     </div>

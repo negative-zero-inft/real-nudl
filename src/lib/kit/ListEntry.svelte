@@ -1,36 +1,31 @@
 <script lang="ts">
     import Glare from "./microelements/glare.svelte";
 
-    export let image: string = "/Evolution.png";
+    export let image: string = "Evolution.png";
     export let title: string = "say";
     export let subtitle: string = "gex";
-    export let onclick: Function = () =>{}; // works well enough
+    export let onclick: Function = () => {}; // works well enough
 </script>
 
 <button class="listEntry" on:click={() => onclick()}>
-
     <div class="img">
-
-        <Glare/>
+        <Glare />
         <!-- bruh...-->
-        <!-- svelte-ignore a11y-missing-attribute the only file i found is in ripple.css we need to inject gradient there---> 
-        <img style="background: url({image}), #000000 0% / cover no-repeat;"/>
+        <!-- svelte-ignore a11y-missing-attribute the only file i found is in ripple.css we need to inject gradient there--->
+        <img style="background: url({image}), #000000 0% / cover no-repeat;" />
     </div>
     <div class="textContainer">
-
-        <Glare/>
+        <Glare />
         <div class="title">{title}</div>
         <div class="subtitle">{subtitle}</div>
     </div>
 </button>
 
 <style lang="scss">
-
     @use "$lib/materials.scss" as c;
     @use "$lib/variables.scss" as v;
-    
-    .listEntry{
 
+    .listEntry {
         border: none;
         background: none;
         gap: v.$spacing-l2;
@@ -39,8 +34,7 @@
         display: flex;
         flex-direction: row;
     }
-    .textContainer{
-
+    .textContainer {
         overflow: hidden;
         display: flex;
         gap: v.$spacing-l2;
@@ -52,25 +46,21 @@
         padding-left: v.$spacing-l2;
         position: relative;
     }
-    .title{
-
+    .title {
         @include v.standard-text();
-        color: rgba(c.$text, 1.0);
+        color: rgba(c.$text, 1);
     }
-    .subtitle{
-
+    .subtitle {
         @include v.standard-text();
         color: rgba(c.$text, 0.5);
     }
-    .img{
-
+    .img {
         width: v.$element-size;
         height: v.$element-size;
         position: relative;
         overflow: hidden;
         border-radius: v.$radius-l1;
-        img{
-
+        img {
             width: v.$element-size;
             height: v.$element-size;
         }

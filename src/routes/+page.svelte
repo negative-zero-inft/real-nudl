@@ -65,7 +65,7 @@
         }}>free vbucks</Button
     >
     <Button width="35px">
-        <Avatar src="/sussykitty.png" />
+        <Avatar src="sussykitty.png" />
     </Button>
     <Popup
         title="You have been banned"

@@ -44,7 +44,7 @@ THE BUTTON - If it works, don't touch it
     {/if}
     {#if icon}
         <div class="iconContainer">
-            <img src={`/icons/${icon}.svg`} alt={icon} />
+            <img src={`icons/${icon}.svg`} alt={icon} />
         </div>
     {/if}
     <slot />
