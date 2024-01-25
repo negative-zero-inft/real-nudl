@@ -34,13 +34,15 @@ THE BUTTON - If it works, don't touch it
 
 <!-- got an action button working :3 maybe better keep this session in the bg, im currently reading some wiki articles :3 <3-->
 <button
-    style="--color: {color}; width: {width}; --padding: {icon || avatar
+    style="--color: {color}; width: {width}; --padding-left: {icon || avatar
         ? 0
         : 12}px; --padding-right: {text && !avatar
         ? 12
         : 0 || (text && avatar)
           ? 10
-          : 0}px;"
+          : 0 || (!text && avatar)
+            ? 0
+            : 0}px;"
     on:click={(e) => action(e)}
     on:click={() => {
         clicked = true;
@@ -69,8 +71,8 @@ THE BUTTON - If it works, don't touch it
 
     .avatar {
         border-radius: 50%;
-        width: 20px;
-        height: 20px;
+        width: 19px;
+        height: 19px;
     }
     .iconContainer {
         width: v.$element-size;
@@ -88,8 +90,9 @@ THE BUTTON - If it works, don't touch it
         min-width: v.$element-size;
         height: v.$element-size;
         min-height: v.$element-size;
+        padding: 0px;
         padding-right: var(--padding-right);
-        padding-left: var(--padding);
+        padding-left: var(--padding-left);
         justify-content: center;
         align-items: center;
         gap: 1px;
@@ -101,9 +104,5 @@ THE BUTTON - If it works, don't touch it
         @include v.standard-text();
         border: none;
         z-index: 1;
-
-        slot {
-            position: relative;
-        }
     }
 </style>

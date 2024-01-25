@@ -4,7 +4,8 @@ $radius-l3: 25px;
 $radius-l4: 35px; // you shouldn't really use it
 
 $label-height: 30px;
-$element-size: 35px; // standard element size. usually height but sometimes also width
+$element-size: 35px;
+
 $animation-speed: 0.25s;
 
 $spacing-l1: 6px;
@@ -12,7 +13,7 @@ $spacing-l2: 12px;
 $spacing-l3: 18px;
 $spacing-l4: 24px;
 
-$blur: 40px; // good
+$blur: 40px;
 
 @mixin standard-text {
 
@@ -23,6 +24,16 @@ $blur: 40px; // good
     line-height: 16px;
     /* 123.077% */
     letter-spacing: 0.26px;
+}
+
+@mixin ixni-standard {
+
+    font-family: ixniom;
+    font-size: 9px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 1.53px;
+    text-transform: lowercase;
 }
 
 @mixin header {

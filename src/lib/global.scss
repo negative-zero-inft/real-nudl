@@ -12,21 +12,29 @@ html {
     letter-spacing: 0.26px;
 }
 
+@font-face {
+    font-family: "ixniom";
+    src: url("ixniom.ttf");
+}
+
 :root {
-    color: #FFF;
+
+    color: #fff;
+    background-color: #000;
     font-family: Atkinson Hyperlegible;
 }
 
 body {
 
     background: url("/Evolution.png"), black 50% / cover no-repeat !important;
+    flex-direction: row;
+    background-color: #000;
     width: 100vw; // oh yeah cuz 100vw will be broken (because of padding) but setting the width by px values won't. i love 
     height: 100vh;
     overflow: hidden;
     padding: 0;
     margin: 0;
     display: flex;
-    flex-direction: row;
 }
 
 .mainView {
@@ -64,6 +72,6 @@ body {
     display: flex;
     flex-direction: column;
     overflow: scroll;
-    background: url("/acrylic-bg.png"), rgba(15, 15, 15, 0.65) 0% 0% / 100px 100px repeat;
+    background: url("/noise.png"), rgba(15, 15, 15, 0.65) 0% 0% / 100px 100px repeat;
     backdrop-filter: blur(40px);
 }

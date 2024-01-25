@@ -21,6 +21,7 @@
     };
 </script>
 
+<!-- ig go make the "fuck right off mobile user" site -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div
     class="juiceContainer"
